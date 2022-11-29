@@ -6,7 +6,7 @@ on:
     workflow_dispatch:
     # 设定国际标准时间19点33--此处是北京时间凌晨3点33左右。国际标准时间，等于北京时间减去 8 个小时
     schedule:
-    - cron: '10 16,17,18,19,20,21 * * *'
+    - cron: '33 19 * * *'
 
 jobs:
   # build为job名称
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         # 安装谷歌浏览器
 #       - name: install chrome
 #         uses: browser-actions/setup-chrome@latest
@@ -24,7 +24,7 @@ jobs:
         # 环境部署
         # 1安装python编译器
       - name: install Python 3.9
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v1
         with:
           python-version: 3.9
         # 2安装模块--对应配置--仅需要一个第三方模块
